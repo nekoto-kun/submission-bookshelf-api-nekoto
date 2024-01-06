@@ -9,27 +9,27 @@ import {
 const routes = [
   {
     method: 'POST',
-    url: '/books',
+    path: '/books',
     handler: addBookHandler
   },
   {
     method: 'GET',
-    url: '/books',
+    path: '/books',
     handler: listBooksHandler
   },
   {
     method: 'GET',
-    url: '/books/{bookId}',
+    path: '/books/{bookId}',
     handler: getBookHandler
   },
   {
     method: 'PUT',
-    url: '/books/{bookId}',
+    path: '/books/{bookId}',
     handler: updateBookHandler
   },
   {
     method: 'DELETE',
-    url: '/books/{bookId}',
+    path: '/books/{bookId}',
     handler: deleteBookHandler
   },
 ]

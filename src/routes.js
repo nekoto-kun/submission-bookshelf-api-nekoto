@@ -1,28 +1,36 @@
+import {
+  addBookHandler,
+  deleteBookHandler,
+  getBookHandler,
+  listBooksHandler,
+  updateBookHandler
+} from './handler.js'
+
 const routes = [
   {
     method: 'POST',
     url: '/books',
-    handler: () => { }
+    handler: addBookHandler
   },
   {
     method: 'GET',
     url: '/books',
-    handler: () => { }
+    handler: listBooksHandler
   },
   {
     method: 'GET',
     url: '/books/{bookId}',
-    handler: () => { }
+    handler: getBookHandler
   },
   {
     method: 'PUT',
     url: '/books/{bookId}',
-    handler: () => { }
+    handler: updateBookHandler
   },
   {
     method: 'DELETE',
     url: '/books/{bookId}',
-    handler: () => { }
+    handler: deleteBookHandler
   },
 ]
 

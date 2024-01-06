@@ -188,10 +188,10 @@ const deleteBookHandler = (request, h) => {
   return response
 }
 
-export default {
+export {
   addBookHandler,
-  listBooksHandler,
+  deleteBookHandler,
   getBookHandler,
-  updateBookHandler,
-  deleteBookHandler
+  listBooksHandler,
+  updateBookHandler
 }

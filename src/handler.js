@@ -63,11 +63,29 @@ const addBookHandler = (request, h) => {
   response.code(500)
 }
 
-const listBooksHandler = (_, h) => {
+const listBooksHandler = (request, h) => {
+  const { name, reading, finished } = request.query
+
+  const filtered = books.filter(book => {
+    if (name) {
+      return book.name.toLowerCase().includes(name.toLowerCase())
+    }
+
+    if (reading) {
+      return book.reading === !!Number(reading)
+    }
+
+    if (finished) {
+      return book.finished === !!Number(finished)
+    }
+
+    return true
+  })
+
   const response = h.response({
     status: 'success',
     data: {
-      books: books.map(book => ({
+      books: filtered.map(book => ({
         id: book.id,
         name: book.name,
         publisher: book.publisher
@@ -195,3 +213,4 @@ export {
   listBooksHandler,
   updateBookHandler
 }
+
